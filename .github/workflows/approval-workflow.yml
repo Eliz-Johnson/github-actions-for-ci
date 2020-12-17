@@ -3,3 +3,10 @@ on: pull_request_review
 jobs:
   labelWhenApproved:
     runs-on: ubuntu-latest
+    steps:
+      - name: name
+        uses: pullreminders/label-when-approved-action
+        env:
+          APPROVALS: 1
+          GITHUB_TOKEN: ${{ secret.GITHUB_TOKEN }}
+          ADD_LABEL: "label"
